@@ -34,6 +34,7 @@ fn vars() {
     // shadowing
     let first_var = first_var + 1;
     // the old value is still available, but can't be used anymore
+    println!("first_var (amongus) after mutation: {}", first_var); // prints 4
 
     println!("first_var: {}", first_var);
 }
