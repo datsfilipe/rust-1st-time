@@ -41,4 +41,22 @@ fn vars() {
     println!("Is 1 > 4? {}", is_bigger);
     let is_bigger = is_bigger > false; // of course we can do this
     println!("Is is_bigger > false? {}", is_bigger);
+
+    // chars
+    // Some languages treat their char types as 8-bit unsigned integers,
+    // which is the equivalent of the Rust u8 type. The char type in Rust contains unicode code points,
+    // but they don't use UTF-8 encoding. A char in Rust is a 21-bit integer that's padded to be 32 bits wide
+    let smiley_face = '😃';
+    let uppercase_s: u8 = 'S' as u8; // casting to u8 by using the as keyword
+
+    // strings
+    // The str type, also known as a string slice is a view into string data. Most of the time,
+    // we refer to these types by using reference-style syntax that precedes the type with the ampersand &str.
+    // We'll cover references in the following modules. For now, you can think of &str as a pointer to immutable string data.
+    // String literals are all of type &str.
+    // Seems that we won't get a full idea of the difference between String and &str until we learn about Rust's ownership and borrowing system.
+    let string_1 = "miley ";
+    let string_2: &str = "face";
+    let string_3 = string_1.to_string() + string_2; // to_string coverts the given value to a String
+    println!("{} is a {}{}", smiley_face, uppercase_s as char, string_3); // prints 😃 is a Smiley face (casting again otherwise it would print the number 83)
 }
