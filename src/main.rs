@@ -46,6 +46,10 @@ fn vars() {
     // Some languages treat their char types as 8-bit unsigned integers,
     // which is the equivalent of the Rust u8 type. The char type in Rust contains unicode code points,
     // but they don't use UTF-8 encoding. A char in Rust is a 21-bit integer that's padded to be 32 bits wide
+    // Interesting, Microsoft asked this question: Which statement correctly describes how Rust supports text character values?
+    // and  the answer was: In Rust, all text types are valid UTF-8 representations.
+    // But char type is a valid UTF-8 representation? they said that it doesn't use UTF-8 encoding
+    // hmm, I think that I'll have to learn more about this (later :D)
     let smiley_face = '😃';
     let uppercase_s: u8 = 'S' as u8; // casting to u8 by using the as keyword
 
