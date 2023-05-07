@@ -5,6 +5,9 @@ fn main() {
 fn vars() {
     // mutable variable
     let mut first_var: u32;
+    // float variables. Obs: _ in the beginning of the variable name is to indicate that var is not being used
+    let _number_64 = 4.0;      // compiler infers the value to use the default type f64
+    let _number_32: f32 = -5.0; // type f32 specified via annotation
 
     // this is called scoping and is valid
     {
