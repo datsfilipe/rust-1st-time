@@ -36,5 +36,9 @@ fn vars() {
     // the old value is still available, but can't be used anymore
     println!("first_var (amongus) after mutation: {}", first_var); // prints 4
 
-    println!("first_var: {}", first_var);
+    // booleans
+    let is_bigger = 1 > 4; // type is bool
+    println!("Is 1 > 4? {}", is_bigger);
+    let is_bigger = is_bigger > false; // of course we can do this
+    println!("Is is_bigger > false? {}", is_bigger);
 }
