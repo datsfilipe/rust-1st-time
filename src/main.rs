@@ -1,5 +1,5 @@
 fn main() {
-    let first_var: i32;
+    let mut first_var: i32;
 
     {
         let second_var = 1;
