@@ -9,6 +9,7 @@ enum WebEvent { WELoad(bool), WEClick(MouseClick), WEKeys(String, char) }
 fn main() {
     vars();
     types();
+    functions();
 }
 
 fn vars() {
@@ -136,4 +137,23 @@ fn types() {
     let we_keys = WebEvent::WEKeys("Ctrl".to_string(), 'C'); // enum variant with a tuple struct
     // print values
     println!("\nWebEvent enum variants: \n{:?}\n{:?}\n{:?}\n", load, we_click, we_keys);
+}
+
+fn functions() {
+    // parameters example
+    let casual_greeting = "Hello";
+    let formal_greeting = "Good evening";
+    fn greet(name: &str, greeting: &str) {
+        println!("{}, {}!", greeting, name);
+    }
+    greet("John", casual_greeting);
+    greet("Mr. Smith", formal_greeting);
+    // return values example
+    fn add(x: i32, y: i32) -> i32 {
+        if (x == 0) || (y == 0) {
+            return 0; // return early
+        }
+        x * y // no semicolon at the end of the line, otherwise it would be a statement and not an expression
+    }
+    println!("The sum of 5 and 6 is: {}", add(0, 6));
 }
