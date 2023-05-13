@@ -34,16 +34,17 @@ struct MouseClick { _x: i64, _y: i64 }
 enum WebEvent { WELoad(bool), WEClick(MouseClick), WEKeys(String, char) }
 
 fn main() {
-    vars();
-    types();
-    functions();
-
     let mut car = car_factory(String::from("red"), Transmission::Manual, false);
     println!("Car 1 = {}, {:?} transmission, convertible: {}, mileage: {}", car.color, car.transmission, car.convertible, car.mileage);
     car = car_factory(String::from("silver"), Transmission::Automatic, true);
     println!("Car 2 = {}, {:?} transmission, convertible: {}, mileage: {}", car.color, car.transmission, car.convertible, car.mileage);
     car = car_factory(String::from("green"), Transmission::SemiAuto, false);
     println!("Car 3 = {}, {:?} transmission, convertible: {}, mileage: {}", car.color, car.transmission, car.convertible, car.mileage);
+
+    vars();
+    types();
+    functions();
+    compound_data_and_test_values();
 }
 
 fn vars() {
@@ -190,4 +191,13 @@ fn functions() {
         x * y // no semicolon at the end of the line, otherwise it would be a statement and not an expression
     }
     println!("The sum of 5 and 6 is: {}", add(0, 6));
+}
+
+fn compound_data_and_test_values () {
+    // arrays
+    // arrays are fixed-length data structures that contain elements of the same data type
+    let numbers = [1, 2, 3, 4, 5]; // [i32; 5] is the type of the array -> [T; size]
+    let zeros = [0; 5]; // this declaration makes the array with 5 elements of the value 0
+    println!("The first number is: {}", numbers[0]);
+    println!("Zeros array: {:?}", zeros);
 }
