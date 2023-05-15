@@ -200,4 +200,19 @@ fn compound_data_and_test_values () {
     let zeros = [0; 5]; // this declaration makes the array with 5 elements of the value 0
     println!("The first number is: {}", numbers[0]);
     println!("Zeros array: {:?}", zeros);
+    // vectors
+    let three_nums = vec![1, 2, 3]; // vec! macro creates a vector, and like arrays:
+    let ten_zeros = vec![0; 10]; // length 10, values 0
+    println!("The first number is: {}, and the vector of zeros: {:?}", three_nums[0], ten_zeros);
+    let mut fruit = Vec::new(); // empty vector; also when creating with new method, we
+    fruit.push("Apple"); // this will make the vector of type &str
+    // fruit.push(1); // this will throw a mismatch type error
+    fruit.push("Banana");
+    println!("Fruit vector: {:?}", fruit);
+    // can push values into it and pop them out
+    let thing = fruit.pop();
+    println!("Fruit vector: {:?}", thing);
+    let mut numbers = vec![1, 2, 3];
+    numbers[1] = numbers[1] + 5;
+    println!("Numbers vector: {:?}", numbers);
 }
